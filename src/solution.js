@@ -1,7 +1,5 @@
 /**
  * Leetcode code test
- * @param  {[type]} nums [description]
- * @return {[type]}      [description]
  */
 const solution = (nums) => {
     nums = nums.filter((item, index, array) => {

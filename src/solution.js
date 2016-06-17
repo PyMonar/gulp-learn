@@ -1,13 +1,16 @@
-let a = 'Hello world';
+/**
+ * Leetcode code test
+ * @param  {[type]} nums [description]
+ * @return {[type]}      [description]
+ */
+const solution = (nums) => {
+    nums = nums.filter((item, index, array) => {
+        return array.indexOf(item) === index;
+    });
+    tool();
+    return nums.reverse();
+}
 
-console.log(a);
-
-const add = (a, b) => a + b;
-
-console.log(add(1,2));
-
-var b, c, d;
-
-[b, c, d] = [1, 2, 3];
-
-console.log(b);
+const tool = () => {
+    console.log('This is a tool function.');
+}

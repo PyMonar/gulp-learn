@@ -5,11 +5,16 @@ function errorHandle(err) {
     console.log(err);
 }
 
-gulp.task('js',function(){
+gulp.task('babel',function(){
     gulp.src(['src/*.js'])
         .pipe(babel())
         .on('error', errorHandle)
         .pipe(gulp.dest('dist'));
-        
-    gulp.watch('src/*.js', ['js']);
 });
+
+
+gulp.task('watch', function() {
+    gulp.watch('src/*.js', ['babel']);
+});
+
+gulp.task('js', ['babel', 'watch']);

@@ -2,11 +2,19 @@
  * Leetcode code test
  */
 const solution = (nums) => {
-    nums = nums.filter((item, index, array) => {
-        return array.indexOf(item) === index;
-    });
-    tool();
-    return nums.reverse();
+    let l = nums.length;
+    let sorted = false;
+    while (l > 0 && !sorted) {
+        sorted = true;
+        for (let i = 0; i < l - 1; i++) {
+            if (nums[i] > nums[i + 1]) {
+                [nums[i], nums[i + 1]] = [nums[i + 1], nums[i]];
+                sorted = false;
+            }
+        }
+        l--;
+    }
+    return nums;
 }
 
 const tool = () => {

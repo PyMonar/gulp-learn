@@ -7,7 +7,7 @@ let createPerson = (name, age, job) => {
     o.name = name;
     o.age = age;
     o.job = job;
-    o.sayName = () => {
+    o.sayName = function() {
         console.log(this.name);
     }
     return o;
@@ -30,7 +30,7 @@ function Person (name, age, job) {
     this.name = name;
     this.age = age;
     this.job = job;
-    this.sayName = () => {
+    this.sayName = function() {
         console.log(this.name);
     }
 }
@@ -68,7 +68,7 @@ Person.prototype.name = 'Monar';
 Person.prototype.age = 21;
 Person.prototype.job = 'coder';
 
-Person.prototype.sayName = () => {
+Person.prototype.sayName = function() {
     console.log(this.name);
 }
 
